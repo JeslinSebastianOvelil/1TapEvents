@@ -10,7 +10,6 @@ public class HomePage extends AppCompatActivity {
     private ImageView logo3;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
