@@ -13,7 +13,6 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ImageView logo;
     private TextView login;
     private EditText email;
     private EditText password;
@@ -31,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
     }
     private void init(){
         Log.v("init","1");
-        logo = findViewById(R.id.imageview1_login);
         login = findViewById(R.id.textView1_login);
         email = findViewById(R.id.email_login);
         password = findViewById(R.id.password_login);
