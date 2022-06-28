@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="1dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:gravity="center"
+        android:textSize="34sp"
+
+        android:text="Catering Services"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="1dp">
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="204dp"
+            android:layout_height="152dp"
+            android:layout_gravity="center_horizontal"
+            android:scaleType="fitXY"
+            android:padding="1mm"
+            android:src="@drawable/logo1"/>
+
+
+
+
+        <ImageView
+            android:id="@+id/icon2"
+            android:layout_width="204dp"
+            android:layout_height="152dp"
+            android:layout_gravity="center_horizontal"
+            android:scaleType="fitXY"
+            android:padding="1mm"
+            android:src="@drawable/logo2" />
+
+
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="1dp">
+
+
+        <ImageView
+            android:id="@+id/icon3"
+            android:layout_width="204dp"
+            android:layout_height="152dp"
+            android:layout_gravity="center_horizontal"
+            android:scaleType="fitXY"
+            android:padding="1mm"
+            android:src="@drawable/logo3" />
+
+
+
+        <ImageView
+            android:id="@+id/icon4"
+            android:layout_width="203dp"
+            android:layout_height="152dp"
+            android:layout_gravity="center_horizontal"
+            android:scaleType="fitXY"
+            android:padding="1mm"
+            android:src="@drawable/logo4" />
+
+
+
+    </LinearLayout>
+
+</LinearLayout>
