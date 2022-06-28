@@ -24,8 +24,7 @@ public class SampleAdaptor extends RecyclerView.Adapter<SampleAdaptor.ViewHoder>
 
     @Override
     public int getItemCount() {
-        return
-                5;
+        return 5;
     }
 
     public class ViewHoder extends RecyclerView.ViewHolder {
