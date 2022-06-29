@@ -25,6 +25,7 @@ public class HomePage extends AppCompatActivity {
          @Override
          public void onClick(View v) {
              Intent i=new Intent(HomePage.this,Food.class);
+             startActivity(i);
          }
      });
     }
