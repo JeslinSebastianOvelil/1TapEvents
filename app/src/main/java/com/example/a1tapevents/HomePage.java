@@ -51,7 +51,7 @@ public class HomePage extends AppCompatActivity {
         caterings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomePage.this,MainActivity.class);
+                Intent intent = new Intent(HomePage.this,Food.class);
                 startActivity(intent);
             }
         });

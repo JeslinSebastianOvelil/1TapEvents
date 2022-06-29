@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:padding="100dp"
     tools:context=".MainActivity"
-    android:background="@drawable/eventpic1">
+    android:background="@drawable/eventpic10">
 
 
     <TextView
