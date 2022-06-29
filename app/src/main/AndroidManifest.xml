@@ -26,6 +26,15 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".Role"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".catering1"
             android:exported="false" />
         <activity
@@ -39,11 +48,10 @@
             android:exported="false" />
         <activity
             android:name=".HomePage"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
-            android:exported="true" >
-        </activity>
+            android:exported="true"/>
     </application>
 
 </manifest>
