@@ -1,9 +1,140 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".catering1">
+    android:layout_height="wrap_content"
+    android:fillViewport="true"
+    tools:layout_editor_absoluteX="1dp"
+    tools:layout_editor_absoluteY="-2dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".catering1">
+
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="188dp"
+                android:layout_height="119dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/textView"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/logo1"
+                tools:layout_editor_absoluteX="103dp" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="192dp"
+                android:layout_height="34dp"
+                android:gravity="center"
+                android:text="Yolk Olive"
+                app:layout_constraintTop_toBottomOf="@id/imageView"
+                tools:layout_editor_absoluteX="103dp" />
+
+            <EditText
+                android:id="@+id/editTextTextPersonName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Soup"
+                app:layout_constraintStart_toStartOf="@+id/checkBox"
+                app:layout_constraintTop_toBottomOf="@id/textView" />
+
+            <CheckBox
+                android:id="@+id/checkBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CheckBox"
+                app:layout_constraintStart_toStartOf="@+id/checkBox2"
+                app:layout_constraintTop_toBottomOf="@id/editTextTextPersonName" />
+
+            <CheckBox
+                android:id="@+id/checkBox2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CheckBox"
+                app:layout_constraintTop_toTopOf="@id/checkBox"
+                tools:layout_editor_absoluteX="21dp" />
+
+            <EditText
+                android:id="@+id/editTextTextPersonName2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Appetizer"
+                app:layout_constraintStart_toStartOf="@+id/checkBox4"
+                app:layout_constraintTop_toBottomOf="@+id/checkBox" />
+
+
+            <CheckBox
+                android:id="@+id/checkBox4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CheckBox"
+                app:layout_constraintTop_toBottomOf="@id/editTextTextPersonName2"
+                tools:layout_editor_absoluteX="21dp" />
+
+            <EditText
+                android:id="@+id/editTextTextPersonName3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Main Course"
+                app:layout_constraintStart_toStartOf="@+id/checkBox7"
+                app:layout_constraintTop_toBottomOf="@+id/checkBox4" />
+
+            <CheckBox
+                android:id="@+id/checkBox7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CheckBox"
+                app:layout_constraintTop_toBottomOf="@id/editTextTextPersonName3"
+                tools:layout_editor_absoluteX="21dp" />
+
+            <EditText
+                android:id="@+id/editTextTextPersonName4"
+                android:layout_width="128dp"
+                android:layout_height="51dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Dessert"
+                app:layout_constraintStart_toStartOf="@+id/checkBox10"
+                app:layout_constraintTop_toBottomOf="@+id/checkBox7" />
+
+            <CheckBox
+                android:id="@+id/checkBox10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CheckBox"
+                app:layout_constraintTop_toBottomOf="@id/editTextTextPersonName4"
+                tools:layout_editor_absoluteX="16dp" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Add to cart"
+                app:layout_constraintTop_toBottomOf="@+id/checkBox10"
+                tools:layout_editor_absoluteX="160dp" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+</ScrollView>
