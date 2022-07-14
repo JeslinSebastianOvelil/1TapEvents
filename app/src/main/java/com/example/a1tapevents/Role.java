@@ -51,7 +51,7 @@ public class Role extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Login Function
-                Intent intent = new Intent(Role.this,MainActivity.class);
+                Intent intent = new Intent(Role.this,OrganizerLogin.class);
                 startActivity(intent);
             }
         });
