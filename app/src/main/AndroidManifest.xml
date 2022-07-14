@@ -26,8 +26,11 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".OrganizerLogin"
+            android:exported="false" />
+        <activity
             android:name=".Role"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -51,7 +54,7 @@
             android:exported="true" />
         <activity
             android:name=".MainActivity"
-            android:exported="true"/>
+            android:exported="true" />
     </application>
 
 </manifest>

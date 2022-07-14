@@ -38,8 +38,17 @@ public class Role extends AppCompatActivity {
         user.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Signup Function
-                Intent intent = new Intent(Role.this, MainActivity.class);
+                //Login Function
+                Intent intent = new Intent(Role.this,MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        organizer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Login Function
+                Intent intent = new Intent(Role.this,OrganizerLogin.class);
                 startActivity(intent);
             }
         });
