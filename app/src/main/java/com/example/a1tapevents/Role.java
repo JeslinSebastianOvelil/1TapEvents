@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
+
 import com.google.firebase.auth.FirebaseAuth;
 
 public class Role extends AppCompatActivity {
@@ -30,14 +31,10 @@ public class Role extends AppCompatActivity {
         onClickFunctions();
     }
     private void init(){
-
-        user = findViewById(R.id.user_role);
-        organizer = findViewById(R.id.organizer_role);
-
-    }
+        user = findViewById(R.id.users_role);
+        organizer = findViewById(R.id.organizer_role);}
     private void onClickFunctions() {
-
-
+        Log.v("init", "1");
         user.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -6,15 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".Role"
     android:background="@drawable/eventpic1">
-
     <Button
-        android:id="@+id/user_role"
+        android:id="@+id/users_role"
         android:layout_width="200dp"
         android:layout_height="70dp"
-        android:layout_marginTop="244dp"
-        android:text="User"
+        android:layout_marginTop="260dp"
+        android:text="USER"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -22,13 +20,10 @@
         android:id="@+id/organizer_role"
         android:layout_width="200dp"
         android:layout_height="70dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginBottom="244dp"
-        android:text="Organizer"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="64dp"
+        android:text="ORGANIZER"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/user_role"
-        app:layout_constraintVertical_bias="0.133" />
+        app:layout_constraintTop_toBottomOf="@+id/users_role" />
 </androidx.constraintlayout.widget.ConstraintLayout>
