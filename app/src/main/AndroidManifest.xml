@@ -20,6 +20,9 @@
             android:name=".MyProfile"
             android:exported="false" />
         <activity
+            android:name=".OrganizerLogin"
+            android:exported="false" />
+        <activity
             android:name=".Role"
             android:exported="true">
             <intent-filter>
