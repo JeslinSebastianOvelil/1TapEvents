@@ -20,14 +20,8 @@
             android:name=".profilelogin"
             android:exported="false" />
         <activity
-            android:name=".Role"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:name=".MyProfile"
+            android:exported="false" />
         <activity
             android:name=".OrganizerLogin"
             android:exported="false" />
@@ -45,9 +39,6 @@
             android:exported="false" />
         <activity
             android:name=".Food"
-            android:exported="false" />
-        <activity
-            android:name=".catering_service"
             android:exported="false" />
         <activity
             android:name=".SignupPage"
