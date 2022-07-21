@@ -3,9 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/1TapEvents/app/src/main/res/drawable/bg_btn.xml" value="0.1" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/1TapEvents/app/src/main/res/drawable/ic_email.xml" value="0.1" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/1TapEvents/app/src/main/res/drawable/ic_home.xml" value="0.1" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/1TapEvents/app/src/main/res/layout/activity_catering1.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/1TapEvents/app/src/main/res/layout/activity_main.xml" value="0.2318840579710145" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/1TapEvents/app/src/main/res/layout/activity_organizer_login.xml" value="0.23802083333333332" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/1TapEvents/app/src/main/res/layout/activity_profilelogin.xml" value="0.2318840579710145" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/1TapEvents/app/src/main/res/layout/activity_role.xml" value="0.2318840579710145" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/1TapEvents/app/src/main/res/layout/activity_signup_page.xml" value="0.2318840579710145" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/1TapEvents/app/src/main/res/layout/sample_card_layout.xml" value="0.2318840579710145" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/1TapEvents/app/src/main/res/layout/toolbar.xml" value="0.1" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/1TapEvents/app/src/main/res/layout/activity_catering_service.xml" value="0.25" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/1TapEvents/app/src/main/res/layout/activity_food.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/1TapEvents/app/src/main/res/layout/activity_forgot_password.xml" value="0.22826086956521738" />
