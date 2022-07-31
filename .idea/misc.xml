@@ -6,18 +6,10 @@
         <entry key="..\:/Users/DELL/AndroidStudioProjects/1TapEvents/app/src/main/res/layout/activity_main.xml" value="0.2318840579710145" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/1TapEvents/app/src/main/res/layout/activity_organizer_login.xml" value="0.23802083333333332" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/1TapEvents/app/src/main/res/drawable/ic_delete.xml" value="0.1305" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/1TapEvents/app/src/main/res/font/amarante.xml" value="0.27487179487179486" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/1TapEvents/app/src/main/res/layout/activity_1.xml" value="0.25" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/1TapEvents/app/src/main/res/layout/activity_2.xml" value="0.25" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/1TapEvents/app/src/main/res/layout/activity_catering1.xml" value="0.22826086956521738" />
-        <entry key="..\:/Users/DELL/AndroidStudioProjects/1TapEvents/app/src/main/res/drawable/bg_btn.xml" value="0.1" />
-        <entry key="..\:/Users/DELL/AndroidStudioProjects/1TapEvents/app/src/main/res/drawable/ic_email.xml" value="0.1" />
-        <entry key="..\:/Users/DELL/AndroidStudioProjects/1TapEvents/app/src/main/res/drawable/ic_home.xml" value="0.1" />
-        <entry key="..\:/Users/HP/AndroidStudioProjects/1TapEvents/app/src/main/res/layout/activity_catering1.xml" value="0.22826086956521738" />
-        <entry key="..\:/Users/DELL/AndroidStudioProjects/1TapEvents/app/src/main/res/layout/activity_main.xml" value="0.2318840579710145" />
-        <entry key="..\:/Users/DELL/AndroidStudioProjects/1TapEvents/app/src/main/res/layout/activity_organizer_login.xml" value="0.23802083333333332" />
-        <entry key="..\:/Users/DELL/AndroidStudioProjects/1TapEvents/app/src/main/res/layout/activity_profilelogin.xml" value="0.2318840579710145" />
-        <entry key="..\:/Users/DELL/AndroidStudioProjects/1TapEvents/app/src/main/res/layout/activity_role.xml" value="0.2318840579710145" />
-        <entry key="..\:/Users/DELL/AndroidStudioProjects/1TapEvents/app/src/main/res/layout/activity_signup_page.xml" value="0.2318840579710145" />
-        <entry key="..\:/Users/DELL/AndroidStudioProjects/1TapEvents/app/src/main/res/layout/sample_card_layout.xml" value="0.2318840579710145" />
-        <entry key="..\:/Users/DELL/AndroidStudioProjects/1TapEvents/app/src/main/res/layout/toolbar.xml" value="0.1" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/1TapEvents/app/src/main/res/layout/activity_catering_service.xml" value="0.25" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/1TapEvents/app/src/main/res/layout/activity_food.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/1TapEvents/app/src/main/res/layout/activity_forgot_password.xml" value="0.22826086956521738" />
@@ -28,11 +20,13 @@
         <entry key="..\:/Users/HP/AndroidStudioProjects/1TapEvents/app/src/main/res/layout/activity_my_cart.xml" value="0.25" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/1TapEvents/app/src/main/res/layout/activity_my_profile.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/1TapEvents/app/src/main/res/layout/activity_organizer_login.xml" value="0.2" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/1TapEvents/app/src/main/res/layout/activity_profilelogin.xml" value="0.25" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/1TapEvents/app/src/main/res/layout/activity_role.xml" value="0.25" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/1TapEvents/app/src/main/res/layout/activity_signup_page.xml" value="0.25" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/1TapEvents/app/src/main/res/layout/layout_item.xml" value="0.2" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/1TapEvents/app/src/main/res/layout/mycart_item.xml" value="0.24895833333333334" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/1TapEvents/app/src/main/res/layout/sample_card_layout.xml" value="0.25" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/1TapEvents/app/src/main/res/layout/toolbar.xml" value="0.25" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/1TapEvents/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2265" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/1TapEvents/app/src/main/res/drawable-v24/test_icon1_foreground.xml" value="0.174" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/1TapEvents/app/src/main/res/drawable-v24/test_icon_foreground.xml" value="0.175" />

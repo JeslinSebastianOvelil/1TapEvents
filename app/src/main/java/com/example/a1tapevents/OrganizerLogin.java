@@ -20,6 +20,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class OrganizerLogin extends AppCompatActivity {
     private TextView login;
@@ -62,7 +63,7 @@ public class OrganizerLogin extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
                                 Toast.makeText(OrganizerLogin.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(OrganizerLogin.this, HomePage.class);
+                                Intent intent = new Intent(OrganizerLogin.this, profilelogin.class);
                                 startActivity(intent);
                                 finish();
                             } else {
@@ -114,17 +115,16 @@ public class OrganizerLogin extends AppCompatActivity {
         });
     }
 
-    /*
     protected void onStart(){
         super.onStart();
         FirebaseUser user = mAuth.getCurrentUser();
         if (user != null) {
-            Intent i = new Intent(OrganizerLogin.this, HomePage.class);
+            Intent i = new Intent(OrganizerLogin.this, profilelogin.class);
             startActivity(i);
             this.finish();
         }
     }
-    */
+
 
 }
 
