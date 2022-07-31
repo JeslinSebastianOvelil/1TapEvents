@@ -3,7 +3,6 @@ package com.example.a1tapevents;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -51,6 +50,7 @@ public class HomePage extends AppCompatActivity {
         caterings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent intent = new Intent(HomePage.this,Food.class);
                 startActivity(intent);
             }

@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="100dp"
-    tools:context=".MainActivity"
-    android:background="@drawable/eventpic10">
+    tools:context=".MainActivity">
 
 
     <TextView
@@ -14,8 +13,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
-        android:fontFamily="sans-serif-black"
+        android:fontFamily="serif"
         android:text="Login By User"
+        android:textStyle="bold"
         android:textColor="@color/black"
         android:textSize="24sp"
         android:typeface="normal"
