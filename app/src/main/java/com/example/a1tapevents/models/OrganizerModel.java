@@ -1,17 +1,18 @@
 package com.example.a1tapevents.models;
 
 public class OrganizerModel {
-    String name,about,address,contact,email;
+    String name,about,address,contact,email,url;
 
     public OrganizerModel() {
     }
 
-    public OrganizerModel(String name, String about, String address, String contact, String email) {
+    public OrganizerModel(String name, String about, String address, String contact, String email,String url) {
         this.name = name;
         this.about = about;
         this.address = address;
         this.contact = contact;
         this.email = email;
+        this.url = url;
     }
 
     public String getName() {
@@ -56,5 +57,13 @@ public class OrganizerModel {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 }
