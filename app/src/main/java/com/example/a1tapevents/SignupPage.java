@@ -106,13 +106,15 @@ public class SignupPage extends AppCompatActivity {
     private void writedb(String name_d,long contact_d, String email_d, String password_d){
 
         //Writing to database
+        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        String uid = currentUser.getUid();
         Map<String,Object> user = new HashMap<>();
         user.put("name",name_d);
         user.put("contact",contact_d);
         user.put("email",email_d);
         user.put("password",password_d);
 
-        db.collection("users").document().set(user)
+        db.collection("users").document(uid).set(user)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {

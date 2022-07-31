@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
                                 .addOnFailureListener(new OnFailureListener() {
                                     @Override
                                     public void onFailure(@NonNull Exception e) {
-                                        Toast.makeText(MainActivity.this,"Error! Failure in reset link",Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(MainActivity.this,"Error! Failure in sending reset link",Toast.LENGTH_SHORT).show();
                                     }
                                 });
                     }
@@ -130,7 +130,6 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    /*
     protected void onStart(){
         super.onStart();
         FirebaseUser user = mAuth.getCurrentUser();
@@ -140,6 +139,5 @@ public class MainActivity extends AppCompatActivity {
             this.finish();
         }
     }
-    */
     private void ApiCalls() {}
 }
