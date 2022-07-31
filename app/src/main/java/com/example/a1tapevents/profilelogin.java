@@ -59,7 +59,7 @@ public class profilelogin extends AppCompatActivity {
         setContentView(R.layout.activity_profilelogin);
 
         init();
-        retrieveFromFirestore();
+        retrieverFirestore();
         onClick();
     }
 
@@ -73,7 +73,7 @@ public class profilelogin extends AppCompatActivity {
         });
     }
 
-    private void retrieveFromFirestore() {
+    private void retrieverFirestore() {
         String user_email = currUser.getEmail();
 
         db.collection("organizer").

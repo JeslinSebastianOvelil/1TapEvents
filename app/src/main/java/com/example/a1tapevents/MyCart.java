@@ -27,7 +27,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MyCart extends AppCompatActivity implements ICartLoadListener {
+public class MyCart extends AppCompatActivity {
     @BindView(R.id.mycart_recycler)
     RecyclerView recyclerview_cart;
     @BindView(R.id.mycart_layout)
@@ -36,7 +36,6 @@ public class MyCart extends AppCompatActivity implements ICartLoadListener {
     FirebaseFirestore db;
     CartAdapter adapter;
     List<CartModel> cartmodels;
-    ICartLoadListener cartLoadListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,10 +43,10 @@ public class MyCart extends AppCompatActivity implements ICartLoadListener {
         setContentView(R.layout.activity_my_cart);
 
         init();
-        loadItemFromFirebase();
+        retrieverFirebase();
     }
 
-    private void loadItemFromFirebase() {
+    private void retrieverFirebase() {
         FirebaseUser currUser = FirebaseAuth.getInstance().getCurrentUser();
         String uid = currUser.getUid();
 
@@ -70,14 +69,12 @@ public class MyCart extends AppCompatActivity implements ICartLoadListener {
                                     }
                                     adapter.notifyDataSetChanged();
                                 }
-                                cartLoadListener.onCartLoadSuccess(cartmodels);
                             }
                         });
     }
 
     private void init(){
         ButterKnife.bind(this);
-        cartLoadListener = this;
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         recyclerview_cart.setLayoutManager(linearLayoutManager);
@@ -88,14 +85,6 @@ public class MyCart extends AppCompatActivity implements ICartLoadListener {
         recyclerview_cart.setAdapter(adapter);
         db= FirebaseFirestore.getInstance();
 
-    }
-
-    @Override
-    public void onCartLoadSuccess(List<CartModel> cartModelList) {
-    }
-
-    @Override
-    public void onCartLoadFailure(String message) {
     }
 
 }

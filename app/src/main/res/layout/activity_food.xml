@@ -44,9 +44,6 @@
 
     </LinearLayout>
 
-
-
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -63,8 +60,6 @@
             android:padding="1mm"
             android:src="@drawable/logo3" />
 
-
-
         <ImageView
             android:id="@+id/icon4"
             android:layout_width="203dp"
@@ -74,8 +69,12 @@
             android:padding="1mm"
             android:src="@drawable/logo4" />
 
-
-
     </LinearLayout>
+    <TextView
+        android:id="@+id/caterer_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text ="Tharavadu Catering &amp; Event Management"
+        android:textSize="20sp"/>
 
 </LinearLayout>
