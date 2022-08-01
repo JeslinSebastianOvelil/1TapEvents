@@ -4,8 +4,6 @@ import static android.content.ContentValues.TAG;
 
 import android.app.AlertDialog;
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,7 +16,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.a1tapevents.R;
 import com.example.a1tapevents.models.CartModel;
-import com.example.a1tapevents.models.OrganizerModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -28,25 +25,21 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
-import com.google.firebase.storage.FileDownloadTask;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
-public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ItemViewHolder> {
+public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.ItemViewHolder> {
 
     private Context context;
     private List<CartModel> cartModelList;
     FirebaseFirestore db;
     FirebaseUser currUser;
-    String uid;
 
-    public CartAdapter(Context context, List<CartModel> cartModelList) {
+    public BookingAdapter(Context context, List<CartModel> cartModelList) {
         this.context = context;
         this.cartModelList = cartModelList;
     }
@@ -55,23 +48,21 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ItemViewHolder
     @Override
     public ItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         return new ItemViewHolder(LayoutInflater.from(context)
-                .inflate(R.layout.layout_item,parent,false));
+                .inflate(R.layout.booking_item,parent,false));
     }
 
     @Override
     public void onBindViewHolder(@NonNull ItemViewHolder holder, int position) {
-        //Glide.with(context)
-                //.load(itemModelList.get(position).getImage())
-               // .into(holder.itemImageView);
-        holder.itemOrganizer.setText(new StringBuilder().append(cartModelList.get(position).getOrganizer()));
-        holder.itemContact.setText(new StringBuilder().append(cartModelList.get(position).getContact()));
-        holder.itemDate.setText(new StringBuilder().append(cartModelList.get(position).getDate()));
-        holder.itemTime.setText(new StringBuilder().append(cartModelList.get(position).getTime()));
-        holder.itemPrice.setText(new StringBuilder("Rs").append(String.valueOf(cartModelList.get(position).getPrice())));
-        holder.itemDelete.setOnClickListener(v -> {
+
+        holder.Organizer.setText(new StringBuilder().append(cartModelList.get(position).getOrganizer()));
+        holder.Contact.setText(new StringBuilder().append(cartModelList.get(position).getContact()));
+        holder.Date.setText(new StringBuilder().append(cartModelList.get(position).getDate()));
+        holder.Time.setText(new StringBuilder().append(cartModelList.get(position).getTime()));
+        holder.Price.setText(new StringBuilder("Rs").append(String.valueOf(cartModelList.get(position).getPrice())));
+        holder.Delete.setOnClickListener(v -> {
             AlertDialog dialog = new AlertDialog.Builder(context)
                     .setTitle("Delete item")
-                    .setMessage("Do you want to delete this item from cart?")
+                    .setMessage("Do you want to cancel your booking? ")
                     .setNegativeButton("Cancel", (dialog1, which) -> dialog1.dismiss())
                     .setPositiveButton("OK", (dialog12, which) -> {
 
@@ -87,9 +78,9 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ItemViewHolder
     private void deletefromFirestore(CartModel cartModel) {
         db = FirebaseFirestore.getInstance();
         currUser = FirebaseAuth.getInstance().getCurrentUser();
-        uid = currUser.getUid();
+        String uid = currUser.getUid();
 
-        db.collection("users").document(uid).collection("cart").
+        db.collection("users").document(uid).collection("bookings").
                 whereEqualTo("organizer",cartModel.getOrganizer())
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -98,13 +89,12 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ItemViewHolder
                         if(task.isSuccessful() && !task.getResult().isEmpty()){
                             DocumentSnapshot documentSnapshot = task.getResult().getDocuments().get(0);
                             String documentID = documentSnapshot.getId();
-                            db.collection("users").document(uid).collection("cart").document(documentID)
+                            db.collection("users").document(uid).collection("bookings").document(documentID)
                                     .delete()
                                     .addOnSuccessListener(new OnSuccessListener<Void>() {
                                         @Override
                                         public void onSuccess(Void unused) {
                                             Log.d(TAG, "onSuccess: Item Deleted......");
-
                                             updateFirebase(cartModel);
                                         }
                                     }).addOnFailureListener(new OnFailureListener() {
@@ -134,7 +124,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ItemViewHolder
                             String documentID = documentSnapshot.getId();
 
                             db.collection("organizer").document(cartModel.getOrganizer()).collection("bookings").document(documentID)
-                                    .update("status", "Deleted")
+                                    .update("status", "Cancelled")
                                     .addOnSuccessListener(new OnSuccessListener<Void>() {
                                         @Override
                                         public void onSuccess(Void aVoid) {
@@ -154,6 +144,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ItemViewHolder
                         }
                     }
                 });
+
     }
 
     @Override
@@ -163,26 +154,26 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ItemViewHolder
 
     public class ItemViewHolder extends RecyclerView.ViewHolder{
 
-        @BindView(R.id.item_organizer)
-        TextView itemOrganizer;
+        @BindView(R.id.booking_organizer)
+        TextView Organizer;
 
-        @BindView(R.id.item_delete)
-        ImageView itemDelete;
+        @BindView(R.id.booking_delete)
+        ImageView Delete;
 
-        @BindView(R.id.item_whatsapp)
-        ImageView itemWhatsapp;
+        @BindView(R.id.booking_googlepay)
+        ImageView gpay_logo;
 
-        @BindView(R.id.item_contact)
-        TextView itemContact;
+        @BindView(R.id.booking_contact)
+        TextView Contact;
 
-        @BindView(R.id.item_date)
-        TextView itemDate;
+        @BindView(R.id.booking_date)
+        TextView Date;
 
-        @BindView(R.id.item_time)
-        TextView itemTime;
+        @BindView(R.id.booking_time)
+        TextView Time;
 
-        @BindView(R.id.item_price)
-        TextView itemPrice;
+        @BindView(R.id.booking_price)
+        TextView Price;
 
         private Unbinder unbinder;
 

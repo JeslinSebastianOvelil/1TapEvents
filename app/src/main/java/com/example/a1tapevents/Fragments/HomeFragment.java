@@ -1,5 +1,7 @@
 package com.example.a1tapevents.Fragments;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,60 +9,97 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.example.a1tapevents.R;
+import com.example.a1tapevents.Service;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link HomeFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class HomeFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    public static final String TEXT_TO_SEND = "com.example.a1tapevents.TEXT_TO_SEND";
+    String textToSend;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    Context context;
+    private ImageView venues;
+    private ImageView videography;
+    private ImageView caterings;
+    private ImageView transport;
+    private ImageView cultureprog;
+    private ImageView soundlight;
+    private ImageView decoration;
 
-    public HomeFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment HomeFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static HomeFragment newInstance(String param1, String param2) {
-        HomeFragment fragment = new HomeFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
+    public HomeFragment(Context context) {
+        this.context = context;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
+        venues = (ImageView) view.findViewById(R.id.venue_homepage);
+        videography = (ImageView) view.findViewById(R.id.videography_homepage);
+        caterings = (ImageView) view.findViewById(R.id.cateringservice_homepage);
+        transport = (ImageView) view.findViewById(R.id.transport_homepage);
+        cultureprog = (ImageView) view.findViewById(R.id.culture_homepage);
+        decoration = (ImageView) view.findViewById(R.id.decorations_homepage);
+
+        venues.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                textToSend ="Venues";
+                gotoActivity();
+            }
+        });
+        videography.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                textToSend ="Photography & Videography";
+                gotoActivity();
+            }
+        });
+        caterings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                textToSend ="Catering";
+                gotoActivity();
+            }
+        });
+        transport.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                textToSend ="Transportation";
+                gotoActivity();
+            }
+        });
+        cultureprog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                textToSend ="Cultural Programs";
+                gotoActivity();
+            }
+        });
+        decoration.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                textToSend ="Decoration";
+                gotoActivity();
+            }
+        });
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        return view;
+
+    }
+
+    private void gotoActivity() {
+        Intent intent = new Intent(getActivity(), Service.class);
+        intent.putExtra(TEXT_TO_SEND,textToSend);
+        startActivity(intent);
     }
 }

@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MyCart"
-    android:id="@+id/mycart_layout">
-    
+    android:id="@+id/mybooking_layout">
+
     <LinearLayout
-        android:id="@+id/mycart_panel"
+        android:id="@+id/mybooking_panel"
         android:background="@color/grey"
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -21,10 +21,10 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="11"
-            android:layout_marginLeft="80dp"
+            android:layout_marginStart="80dp"
             android:fontFamily="sans-serif"
             android:gravity="center"
-            android:text="My Cart"
+            android:text="My Bookings"
             android:textColor="@color/black"
             android:textSize="30sp"
             android:textStyle="bold" />
@@ -32,17 +32,17 @@
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/mycart_recycler"
+        android:id="@+id/mybooking_recycler"
         android:layout_width="match_parent"
         android:layout_height="500dp"
-        android:layout_below="@+id/mycart_panel"
+        android:layout_below="@+id/mybooking_panel"
         android:padding="8dp">
 
     </androidx.recyclerview.widget.RecyclerView>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/mycart_recycler"
+        android:layout_below="@id/mybooking_recycler"
         android:background="@color/grey">
 
         <TextView
@@ -54,7 +54,7 @@
             android:gravity="start"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:text="@string/add_to_cart_message"
+            android:text="@string/mybooking_message"
             android:textColor="@color/purple_500"
             android:textSize="15sp" />
     </LinearLayout>
