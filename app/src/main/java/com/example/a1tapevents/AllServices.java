@@ -2,6 +2,7 @@ package com.example.a1tapevents;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -68,6 +69,7 @@ public class AllServices extends AppCompatActivity {
 
                         for(DocumentChange dc : value.getDocumentChanges()){
                             if(dc.getType() == DocumentChange.Type.ADDED){
+
                                 organizerModelList.add(dc.getDocument().toObject(OrganizerModel.class));
                             }
                             if (dc.getType() == DocumentChange.Type.REMOVED) {
@@ -100,7 +102,7 @@ public class AllServices extends AppCompatActivity {
         recyclerview_service.setHasFixedSize(true);
         recyclerview_service.addItemDecoration(new SpaceItemDecoration());
         organizerModelList = new ArrayList<>();
-        adapter = new AllServicesAdapter(this, organizerModelList);
+        adapter = new AllServicesAdapter(string_title,this,organizerModelList);
         recyclerview_service.setAdapter(adapter);
         db= FirebaseFirestore.getInstance();
 

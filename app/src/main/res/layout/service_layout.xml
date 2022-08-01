@@ -9,23 +9,21 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:padding="12dp"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content">
 
         <LinearLayout
             android:orientation="vertical"
-            android:gravity="center"
-            android:layout_width="match_parent"
+            android:gravity="start"
+            android:layout_width="340dp"
+            android:padding="10dp"
             android:layout_height="wrap_content">
 
             <ImageView
                 android:id="@+id/allservices_pic"
                 android:src="@drawable/whatsapp_logo"
-                android:layout_width="80dp"
-                android:layout_height="80dp"/>
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginEnd="10dp"
+                android:scaleType="centerCrop"/>
 
             <TextView
                 android:id="@+id/allservices_name"
@@ -48,8 +46,6 @@
 
 
         </LinearLayout>
-
-    </LinearLayout>
 
 
 </androidx.cardview.widget.CardView>

@@ -45,10 +45,13 @@ import butterknife.Unbinder;
 
 public class AllServicesAdapter extends RecyclerView.Adapter<AllServicesAdapter.ItemViewHolder>{
 
+    public String category;
+
     private Context context;
     private List<OrganizerModel> organizerModels;
 
-    public AllServicesAdapter(Context context, List<OrganizerModel> organizerModels) {
+    public AllServicesAdapter(String category, Context context, List<OrganizerModel> organizerModels) {
+        this.category = category;
         this.context = context;
         this.organizerModels = organizerModels;
     }
@@ -63,35 +66,37 @@ public class AllServicesAdapter extends RecyclerView.Adapter<AllServicesAdapter.
     @Override
     public void onBindViewHolder(@NonNull AllServicesAdapter.ItemViewHolder holder, int position) {
 
-        holder.name.setText(new StringBuilder().append(organizerModels.get(position).getName()));
-        holder.price.setText(new StringBuilder("Rs").append(String.valueOf(organizerModels.get(position).getPrice())));
+        if(category.equals(organizerModels.get(position).getCategory())){
+            holder.name.setText(new StringBuilder().append(organizerModels.get(position).getName()));
+            holder.price.setText(new StringBuilder("Rs").append(String.valueOf(organizerModels.get(position).getPrice())));
 
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
-        FirebaseStorage storage = FirebaseStorage.getInstance();
-        StorageReference storageReference;
-        String photourl = organizerModels.get(position).getUrl();
+            FirebaseFirestore db = FirebaseFirestore.getInstance();
+            FirebaseStorage storage = FirebaseStorage.getInstance();
+            StorageReference storageReference;
+            String photourl = organizerModels.get(position).getUrl();
 
-        storageReference = storage.getReference().child(photourl);
-        try {
-            File localfile = File.createTempFile("images","jpg");
-            storageReference.getFile(localfile)
-                    .addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
-                        @Override
-                        public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
-                            Bitmap bitmap = BitmapFactory.decodeFile(localfile.getAbsolutePath());
-                            holder.photo.setImageBitmap(bitmap);
-                        }
-                    })
-                    .addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            Log.d(TAG, "onFailure: Failed to retrieve image ");
-                        }
-                    });
-        } catch (IOException e) {
-            e.printStackTrace();
+            storageReference = storage.getReference().child(photourl);
+            try {
+                File localfile = File.createTempFile("images","jpg");
+                storageReference.getFile(localfile)
+                        .addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+                            @Override
+                            public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+                                Bitmap bitmap = BitmapFactory.decodeFile(localfile.getAbsolutePath());
+                                holder.photo.setImageBitmap(bitmap);
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Log.d(TAG, "onFailure: Failed to retrieve image ");
+                            }
+                        });
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
         }
-
     }
 
 
