@@ -45,7 +45,7 @@ public class Service extends AppCompatActivity {
 
     private static final String TAG ="Service";
     private ImageView photo;
-    private TextView name,contact,address,about;
+    private TextView name,contact,address,about,price;
     private Button addToCart;
 
     private OrganizerModel organizerModel;
@@ -96,6 +96,7 @@ public class Service extends AppCompatActivity {
                                             about.setText(organizerModel.getAbout());
                                             address.setText(organizerModel.getAddress());
                                             contact.setText(organizerModel.getContact());
+                                            price.setText(new StringBuilder("Rs").append(organizerModel.getPrice()));
                                             String photourl = organizerModel.getUrl();
                                             //getting image
                                             storageReference = storage.getReference().child(photourl);
@@ -135,6 +136,7 @@ public class Service extends AppCompatActivity {
         name = findViewById(R.id.service_name);
         about = findViewById(R.id.service_desc);
         contact = findViewById(R.id.service_contact);
+        price = findViewById(R.id.service_price);
         address = findViewById(R.id.service_address);
         addToCart = findViewById(R.id.service_addtocart);
         db = FirebaseFirestore.getInstance();
@@ -197,7 +199,7 @@ public class Service extends AppCompatActivity {
         cartModel.setContact(organizerModel.getContact());
         cartModel.setDate(date);
         cartModel.setTime(time);
-        cartModel.setPrice(500);
+        cartModel.setPrice(organizerModel.getPrice());
         String uid = currUser.getUid();
         db.collection("users").document(uid).collection("cart").document().set(cartModel);
 

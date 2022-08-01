@@ -17,6 +17,9 @@
         android:theme="@style/Theme.1TapEvents"
         tools:targetApi="31">
         <activity
+            android:name=".AllServices"
+            android:exported="false" />
+        <activity
             android:name=".Service"
             android:exported="false" />
         <activity

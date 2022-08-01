@@ -1,18 +1,21 @@
 package com.example.a1tapevents.models;
 
 public class OrganizerModel {
-    String name,about,address,contact,email,url;
+    String name,about,address,contact,email,url,category;
+    long price;
 
     public OrganizerModel() {
     }
 
-    public OrganizerModel(String name, String about, String address, String contact, String email,String url) {
+    public OrganizerModel(String name, String about, String address, String contact, String email, String url, String category, long price) {
         this.name = name;
         this.about = about;
         this.address = address;
         this.contact = contact;
         this.email = email;
         this.url = url;
+        this.category = category;
+        this.price = price;
     }
 
     public String getName() {
@@ -65,5 +68,21 @@ public class OrganizerModel {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public long getPrice() {
+        return price;
+    }
+
+    public void setPrice(long price) {
+        this.price = price;
     }
 }

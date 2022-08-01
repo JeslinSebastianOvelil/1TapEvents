@@ -9,9 +9,13 @@ import android.view.View;
 import android.widget.ImageView;
 
 public class HomePage extends AppCompatActivity {
+
+    public static final String TEXT_TO_SEND = "com.example.a1tapevents.TEXT_TO_SEND";
     private ImageView venues;
     private ImageView videography;
     private ImageView caterings;
+
+    String textToSend;
 
 
 
@@ -34,26 +38,33 @@ public class HomePage extends AppCompatActivity {
         venues.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomePage.this,MainActivity.class);
-                startActivity(intent);
+
+                textToSend = "Venues";
+                gotoActivity();
             }
         });
 
         videography.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomePage.this,MainActivity.class);
-                startActivity(intent);
+                textToSend = "Photography & Videography";
+                gotoActivity();
             }
         });
 
         caterings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Intent intent = new Intent(HomePage.this,Food.class);
-                startActivity(intent);
+                textToSend = "Catering";
+                gotoActivity();
             }
         });
 
-}}
+}
+
+    private void gotoActivity() {
+        Intent intent = new Intent(this,AllServices.class);
+        intent.putExtra(TEXT_TO_SEND,textToSend);
+        startActivity(intent);
+    }
+}
