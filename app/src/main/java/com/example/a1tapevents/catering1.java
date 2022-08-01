@@ -1,8 +1,10 @@
 package com.example.a1tapevents;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
+import com.smarteist.autoimageslider.SliderView;
+import java.util.ArrayList;
 
 public class catering1 extends AppCompatActivity {
 

@@ -11,7 +11,7 @@
         android:background="#FFFFFF"
         android:gravity="center"
 
-        android:text="Catering Services"
+        android:text="PHOTOGRAPHY"
         android:textSize="34sp" />
 
     <LinearLayout
@@ -22,25 +22,23 @@
         android:padding="1dp">
 
         <ImageButton
-            android:id="@+id/imageButton1"
-            android:layout_width="204dp"
-            android:layout_height="152dp"
+            android:id="@+id/imageButton"
+            android:layout_width="207dp"
+            android:layout_height="186dp"
             android:layout_gravity="center_horizontal"
-            android:scaleType="fitXY"
             android:padding="1mm"
-            android:src="@drawable/logo1"/>
+            android:scaleType="fitXY"
+            android:src="@drawable/evemanimg1" />
 
 
-
-
-        <ImageButton
-            android:id="@+id/imageButton2"
-            android:layout_width="204dp"
-            android:layout_height="152dp"
+        <ImageView
+            android:id="@+id/icon2"
+            android:layout_width="195dp"
+            android:layout_height="182dp"
             android:layout_gravity="center_horizontal"
-            android:scaleType="fitXY"
             android:padding="1mm"
-            android:src="@drawable/logo2" />
+            android:scaleType="fitXY"
+            android:src="@drawable/evemanimg2" />
 
 
     </LinearLayout>
@@ -51,28 +49,24 @@
         android:background="#FFFFFF" >
 
         <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
+            android:id="@+id/textView12"
+            android:layout_width="129dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Yolk Olive Restaurant"
+            android:text="Violet Wedding Planners"
             android:textAlignment="center"
-            android:textSize="20dp" />
+            android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/textView5"
-            android:layout_width="200dp"
+            android:id="@+id/textView13"
+            android:layout_width="93dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:text="Ergo Consultants"
             android:textAlignment="center"
-            android:text="Farmcut"
-            android:textSize="20dp" />
+            android:textSize="20sp" />
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:background="#FFFFFF" />
 
 
     <LinearLayout
@@ -82,26 +76,23 @@
         android:padding="1dp">
 
 
-        <ImageButton
-            android:id="@+id/imageButton3"
-            android:layout_width="204dp"
-            android:layout_height="152dp"
+        <ImageView
+            android:id="@+id/icon3"
+            android:layout_width="212dp"
+            android:layout_height="174dp"
             android:layout_gravity="center_horizontal"
-            android:scaleType="fitXY"
             android:padding="1mm"
-            android:src="@drawable/logo3" />
+            android:scaleType="fitXY"
+            android:src="@drawable/evemanimg3" />
 
-
-
-        <ImageButton
-            android:id="@+id/imageButton4"
-            android:layout_width="203dp"
-            android:layout_height="152dp"
+        <ImageView
+            android:id="@+id/icon4"
+            android:layout_width="193dp"
+            android:layout_height="176dp"
             android:layout_gravity="center_horizontal"
-            android:scaleType="fitXY"
             android:padding="1mm"
-            android:src="@drawable/logo4" />
-
+            android:scaleType="fitXY"
+            android:src="@drawable/evemanimg4" />
 
 
     </LinearLayout>
@@ -112,22 +103,22 @@
         android:background="#FFFFFF" >
 
         <TextView
-            android:id="@+id/textView6"
-            android:layout_width="177dp"
+            android:id="@+id/textView14"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Gourmeriet"
+            android:text="Apollo Events"
             android:textAlignment="center"
-            android:textSize="20dp" />
+            android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/textView7"
-            android:layout_width="260dp"
+            android:id="@+id/textView15"
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Pawa"
+            android:text="Eventique House"
             android:textAlignment="center"
-            android:textSize="20dp" />
+            android:textSize="20sp" />
     </LinearLayout>
 
 </LinearLayout>

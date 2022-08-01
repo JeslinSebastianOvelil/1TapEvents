@@ -8,14 +8,14 @@ import android.content.Intent;
 
 public class Food extends AppCompatActivity {
 
-    ImageButton logo1;
+    ImageButton logo1, logo2, logo3, logo4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food);
 
-        ImageButton logo1= (ImageButton) findViewById(R.id.imageButton);
+        ImageButton logo1= (ImageButton) findViewById(R.id.imageButton1);
         logo1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
