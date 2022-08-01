@@ -2,4 +2,6 @@
     <string name="app_name">1TapEvents</string>
     <string name="add_to_cart_message">Chat with the organizer to confirm your booking. You can pay for your booking only after the organizer\'s confirmation.</string>
     <string name="cart_delete_message">Item deleted from cart</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
