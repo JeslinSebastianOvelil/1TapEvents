@@ -1,23 +1,30 @@
 package com.example.a1tapevents;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
-public class HomePage extends AppCompatActivity {
+import com.example.a1tapevents.Fragments.AboutUsFragment;
+import com.example.a1tapevents.Fragments.BookingsFragment;
+import com.example.a1tapevents.Fragments.HomeFragment;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-    public static final String TEXT_TO_SEND = "com.example.a1tapevents.TEXT_TO_SEND";
-    private ImageView venues;
-    private ImageView videography;
-    private ImageView caterings;
-
-    String textToSend;
+public class HomePage extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
 
+    private FloatingActionButton cart;
+    private BottomNavigationView bottomNavigationView;
+
+    HomeFragment homeFragment;
+    BookingsFragment bookingsFragment;
+    AboutUsFragment aboutUsFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,43 +35,46 @@ public class HomePage extends AppCompatActivity {
         onClickFunctions();
     }
     private void init() {
-        venues = findViewById(R.id.venue_homepage);
-        videography = findViewById(R.id.videography_homepage);
-        caterings = findViewById(R.id.cateringservice_homepage);
+//
+
+        cart = findViewById(R.id.btn_home_cart);
+        bottomNavigationView = findViewById(R.id.bottom_nav_home);
+
+        homeFragment = new HomeFragment(getApplicationContext());
+        bookingsFragment = new BookingsFragment(getApplicationContext());
+        aboutUsFragment = new AboutUsFragment(getApplicationContext());
     }
 
     private void onClickFunctions() {
         Log.v("init","1");
-        venues.setOnClickListener(new View.OnClickListener() {
+
+        cart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                textToSend = "Venues";
-                gotoActivity();
+                Intent intent = new Intent(HomePage.this, MyCart.class);
+                startActivity(intent);
             }
         });
 
-        videography.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                textToSend = "Photography & Videography";
-                gotoActivity();
-            }
-        });
-
-        caterings.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                textToSend = "Catering";
-                gotoActivity();
-            }
-        });
-
+        bottomNavigationView.setOnNavigationItemSelectedListener(HomePage.this);
+        bottomNavigationView.setSelectedItemId(R.id.home);
 }
 
-    private void gotoActivity() {
-        Intent intent = new Intent(this,AllServices.class);
-        intent.putExtra(TEXT_TO_SEND,textToSend);
-        startActivity(intent);
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.home:
+                getSupportFragmentManager().beginTransaction().replace(R.id.home_container, homeFragment).commit();
+                return true;
+            case R.id.bookings:
+                getSupportFragmentManager().beginTransaction().replace(R.id.home_container, bookingsFragment).commit();
+                return true;
+            case R.id.about_us:
+                getSupportFragmentManager().beginTransaction().replace(R.id.home_container, aboutUsFragment).commit();
+                return true;
+            default:
+                getSupportFragmentManager().beginTransaction().replace(R.id.home_container, homeFragment).commit();
+                return true;
+        }
     }
 }

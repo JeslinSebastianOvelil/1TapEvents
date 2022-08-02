@@ -7,32 +7,74 @@
     android:layout_height="match_parent"
     tools:context=".HomePage">
 
-    <ImageView
-        android:id="@+id/venue_homepage"
-        android:layout_width="415dp"
-        android:layout_height="250dp"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_home_cart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:clickable="true"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/eventpic16" />
+        app:srcCompat="@drawable/ic_outline_shopping_cart_24" />
 
-    <ImageView
-        android:id="@+id/videography_homepage"
-        android:layout_width="400dp"
-        android:layout_height="250dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.528"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/venue_homepage"
-        app:srcCompat="@drawable/eventpic14" />
+<!--    <ScrollView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:id="@+id/scrollView2">-->
 
-    <ImageView
-        android:id="@+id/cateringservice_homepage"
-        android:layout_width="400dp"
-        android:layout_height="230dp"
+<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content" >-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/videography_homepage"-->
+<!--                android:layout_width="400dp"-->
+<!--                android:layout_height="250dp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/venue_homepage"-->
+<!--                app:srcCompat="@drawable/eventpic14" />-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/cateringservice_homepage"-->
+<!--                android:layout_width="400dp"-->
+<!--                android:layout_height="230dp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/videography_homepage"-->
+<!--                app:srcCompat="@drawable/eventpic15" />-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/venue_homepage"-->
+<!--                android:layout_width="415dp"-->
+<!--                android:layout_height="250dp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                app:srcCompat="@drawable/eventpic16" />-->
+
+<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+<!--    </ScrollView>-->
+
+    <FrameLayout
+        android:id="@+id/home_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_nav_home"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/videography_homepage"
-        app:srcCompat="@drawable/eventpic15" />
+        app:layout_constraintTop_toTopOf="parent">
+
+    </FrameLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav_home"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@drawable/bottom_menu"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
