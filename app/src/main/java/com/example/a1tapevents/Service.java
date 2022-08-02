@@ -68,7 +68,7 @@ public class Service extends AppCompatActivity {
         setContentView(R.layout.activity_service);
 
         Intent intent = getIntent();
-        organizer = intent.getStringExtra(Food.TEXT_TO_SEND);
+        organizer = intent.getStringExtra(AllServices.TEXT_TO_SEND);
 
         init();
         onClickFunctions();

@@ -35,8 +35,6 @@ public class HomePage extends AppCompatActivity implements BottomNavigationView.
         onClickFunctions();
     }
     private void init() {
-//
-
         cart = findViewById(R.id.btn_home_cart);
         bottomNavigationView = findViewById(R.id.bottom_nav_home);
 
