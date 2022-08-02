@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragments.HomeFragment">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/videography_homepage"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                app:srcCompat="@drawable/eventpic14"
+                android:scaleType="centerCrop"/>
+
+            <ImageView
+                android:id="@+id/cateringservice_homepage"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="16dp"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/eventpic15" />
+
+            <ImageView
+                android:id="@+id/venue_homepage"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="16dp"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/eventpic16" />
+
+            <ImageView
+                android:id="@+id/transport_homepage"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="16dp"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/eventpic16" />
+
+            <ImageView
+                android:id="@+id/culture_homepage"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="16dp"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/eventpic16" />
+
+            <ImageView
+                android:id="@+id/soundlight_homepage"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="16dp"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/eventpic16" />
+
+            <ImageView
+                android:id="@+id/decorations_homepage"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="16dp"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/eventpic16" />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

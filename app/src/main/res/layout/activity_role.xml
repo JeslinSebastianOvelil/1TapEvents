@@ -6,13 +6,27 @@
     android:layout_height="match_parent"
     tools:context=".Role"
     android:background="@drawable/eventpic1">
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="52dp"
+        android:src="@mipmap/jeslin_logo"
+        app:layout_constraintBottom_toTopOf="@+id/users_role"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.768" />
+
     <Button
         android:id="@+id/users_role"
         android:layout_width="200dp"
         android:layout_height="70dp"
-        android:layout_marginTop="260dp"
+        android:layout_marginTop="296dp"
         android:text="USER"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

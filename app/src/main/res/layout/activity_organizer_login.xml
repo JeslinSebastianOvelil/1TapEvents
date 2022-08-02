@@ -8,21 +8,32 @@
     android:focusable="auto"
     tools:context=".OrganizerLogin">
 
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="52dp"
+        android:src="@mipmap/jeslin_logo"
+        app:layout_constraintBottom_toTopOf="@+id/title_login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.479"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
     <TextView
         android:id="@+id/title_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="serif"
         android:text="Login as Organizer"
+        android:textColor="@color/black"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/email_ologin"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.789" />
+        app:layout_constraintVertical_bias="0.879" />
 
     <EditText
         android:id="@+id/email_ologin"
