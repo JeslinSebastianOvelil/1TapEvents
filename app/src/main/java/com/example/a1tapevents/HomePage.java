@@ -51,7 +51,6 @@ public class HomePage extends AppCompatActivity implements BottomNavigationView.
         cart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //TODO: Go to cart
                 Intent intent = new Intent(HomePage.this, MyCart.class);
                 startActivity(intent);
             }

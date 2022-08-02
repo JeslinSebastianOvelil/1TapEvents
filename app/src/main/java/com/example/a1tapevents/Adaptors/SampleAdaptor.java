@@ -1,4 +1,4 @@
-package com.example.a1tapevents.Adaptors;
+/*package com.example.a1tapevents.Adaptors;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -33,3 +33,5 @@ public class SampleAdaptor extends RecyclerView.Adapter<SampleAdaptor.ViewHoder>
         }
     }
 }
+
+ */
