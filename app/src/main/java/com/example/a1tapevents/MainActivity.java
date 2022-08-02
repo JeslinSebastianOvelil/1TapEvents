@@ -129,6 +129,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
     protected void onStart(){
         super.onStart();
         FirebaseUser user = mAuth.getCurrentUser();

@@ -9,19 +9,22 @@
 
     <ImageView
         android:id="@+id/logo_signup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="50dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@+id/name_signup"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_launcher_background" />
+        app:srcCompat="@mipmap/jeslin_logo" />
 
     <Button
         android:id="@+id/signup_signup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="5dp"
         android:text="Signup"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -33,65 +36,70 @@
         android:id="@+id/name_signup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:ems="10"
+        android:layout_marginTop="5dp"
+        android:ems="12"
         android:hint="Full Name"
         android:inputType="textPersonName"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logo_signup" />
+        app:layout_constraintTop_toBottomOf="@+id/logo_signup"
+        app:layout_constraintBottom_toTopOf="@+id/contactnumber_signup"/>
 
     <EditText
         android:id="@+id/contactnumber_signup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:ems="10"
+        android:layout_marginTop="5dp"
+        android:ems="12"
         android:hint="Contact Number"
         android:inputType="textPersonName"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name_signup" />
+        app:layout_constraintTop_toBottomOf="@+id/name_signup"
+        app:layout_constraintBottom_toTopOf="@+id/email_signup"/>
 
     <EditText
         android:id="@+id/email_signup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:ems="10"
-        android:hint="Userame - Email id"
+        android:layout_marginTop="5dp"
+        android:ems="12"
+        android:hint="Email id"
         android:inputType="textPersonName"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contactnumber_signup" />
+        app:layout_constraintTop_toBottomOf="@+id/contactnumber_signup"
+        app:layout_constraintBottom_toTopOf="@+id/password_signup"/>
 
     <EditText
         android:id="@+id/password_signup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:ems="10"
+        android:layout_marginTop="5dp"
+        android:ems="12"
         android:hint="Password"
         android:inputType="textPassword"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email_signup" />
+        app:layout_constraintTop_toBottomOf="@+id/email_signup"
+        app:layout_constraintBottom_toTopOf="@+id/newpassword_signup"/>
 
     <EditText
         android:id="@+id/newpassword_signup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:ems="10"
+        android:layout_marginTop="5dp"
+        android:ems="12"
         android:hint="Confirm Password"
         android:inputType="textPassword"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password_signup" />
+        app:layout_constraintTop_toBottomOf="@+id/password_signup"
+        app:layout_constraintBottom_toTopOf="@+id/signup_signup"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
