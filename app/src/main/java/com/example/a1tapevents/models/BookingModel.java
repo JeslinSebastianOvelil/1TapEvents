@@ -1,20 +1,31 @@
 package com.example.a1tapevents.models;
 
 public class BookingModel {
-    String username,email,date,time,status,location;
+    String organizer,userid,username,email,date,time,status,location;
     long contact;
 
     public BookingModel() {
     }
 
-    public BookingModel(String username, String email, long contact, String date, String time, String status, String location) {
+
+    public BookingModel(String organizer, String userid,String username, String email, String date, String time, String status, String location, long contact) {
+        this.organizer = organizer;
+        this.userid = userid;
         this.username = username;
         this.email = email;
-        this.contact = contact;
         this.date = date;
         this.time = time;
         this.status = status;
         this.location = location;
+        this.contact = contact;
+    }
+
+    public String getUserid() {
+        return userid;
+    }
+
+    public void setUserid(String userid) {
+        this.userid = userid;
     }
 
     public String getUsername() {
@@ -71,5 +82,13 @@ public class BookingModel {
 
     public void setLocation(String location) {
         this.location = location;
+    }
+
+    public String getOrganizer() {
+        return organizer;
+    }
+
+    public void setOrganizer(String organizer) {
+        this.organizer = organizer;
     }
 }

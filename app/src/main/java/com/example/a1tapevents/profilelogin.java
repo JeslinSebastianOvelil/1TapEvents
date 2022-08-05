@@ -40,7 +40,7 @@ public class profilelogin extends AppCompatActivity {
 
     private static final String TAG = "profilelogin";
     TextView org_name,org_desc,org_address,org_contact,org_email;
-    TextView edit,logout;
+    TextView logout;
 
     OrganizerModel organizerModel;
 
@@ -136,7 +136,6 @@ public class profilelogin extends AppCompatActivity {
         org_address = findViewById(R.id.organizer_address);
         org_contact = findViewById(R.id.organizer_contact);
         org_email = findViewById(R.id.organizer_email);
-        edit = findViewById(R.id.organizer_edit);
         logout = findViewById(R.id.organizer_logout);
         org_photo = findViewById(R.id.organizer_photo);
 

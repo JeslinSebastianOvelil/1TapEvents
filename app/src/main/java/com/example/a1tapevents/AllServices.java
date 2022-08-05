@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.example.a1tapevents.Adaptors.AllServicesAdapter;
 import com.example.a1tapevents.Adaptors.CartAdapter;
+import com.example.a1tapevents.Fragments.HomeFragment;
 import com.example.a1tapevents.models.CartModel;
 import com.example.a1tapevents.models.OrganizerModel;
 import com.example.a1tapevents.utils.SpaceItemDecoration;
@@ -31,8 +32,8 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class AllServices extends AppCompatActivity {
-
+public class AllServices extends AppCompatActivity implements AllServicesAdapter.OnItemClickListener {
+    public static final String TEXT_TO_SEND = "com.example.a1tapevents.TEXT_TO_SEND";
 
     RecyclerView recyclerview_service;
     RelativeLayout mainLayout;
@@ -69,6 +70,8 @@ public class AllServices extends AppCompatActivity {
 
                         for(DocumentChange dc : value.getDocumentChanges()){
                             if(dc.getType() == DocumentChange.Type.ADDED){
+                                OrganizerModel om = dc.getDocument().toObject(OrganizerModel.class);
+                                if(om.getCategory().equals(string_title))
 
                                 organizerModelList.add(dc.getDocument().toObject(OrganizerModel.class));
                             }
@@ -91,7 +94,7 @@ public class AllServices extends AppCompatActivity {
 
         //ButterKnife.bind(this);
         Intent intent = getIntent();
-        string_title = intent.getStringExtra(HomePage.TEXT_TO_SEND);
+        string_title = intent.getStringExtra(HomeFragment.TEXT_TO_SEND);
         recyclerview_service =findViewById(R.id.allservices_recycler);
         mainLayout = findViewById(R.id.allservices_layout);
         title = findViewById(R.id.allservices_title);
@@ -102,9 +105,16 @@ public class AllServices extends AppCompatActivity {
         recyclerview_service.setHasFixedSize(true);
         recyclerview_service.addItemDecoration(new SpaceItemDecoration());
         organizerModelList = new ArrayList<>();
-        adapter = new AllServicesAdapter(string_title,this,organizerModelList);
+        adapter = new AllServicesAdapter(string_title,this,organizerModelList,this);
         recyclerview_service.setAdapter(adapter);
         db= FirebaseFirestore.getInstance();
 
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        Intent intent = new Intent(this,Service.class);
+        intent.putExtra(TEXT_TO_SEND,organizerModelList.get(position).getName());
+        startActivity(intent);
     }
 }

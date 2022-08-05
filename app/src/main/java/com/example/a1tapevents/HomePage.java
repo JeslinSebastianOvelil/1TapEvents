@@ -10,11 +10,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.example.a1tapevents.Fragments.AboutUsFragment;
 import com.example.a1tapevents.Fragments.BookingsFragment;
 import com.example.a1tapevents.Fragments.HomeFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class HomePage extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
@@ -24,7 +24,7 @@ public class HomePage extends AppCompatActivity implements BottomNavigationView.
 
     HomeFragment homeFragment;
     BookingsFragment bookingsFragment;
-    AboutUsFragment aboutUsFragment;
+    //AboutUsFragment aboutUsFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,14 +35,12 @@ public class HomePage extends AppCompatActivity implements BottomNavigationView.
         onClickFunctions();
     }
     private void init() {
-//
-
         cart = findViewById(R.id.btn_home_cart);
         bottomNavigationView = findViewById(R.id.bottom_nav_home);
 
         homeFragment = new HomeFragment(getApplicationContext());
         bookingsFragment = new BookingsFragment(getApplicationContext());
-        aboutUsFragment = new AboutUsFragment(getApplicationContext());
+        //aboutUsFragment = new AboutUsFragment(getApplicationContext());
     }
 
     private void onClickFunctions() {
@@ -69,8 +67,9 @@ public class HomePage extends AppCompatActivity implements BottomNavigationView.
             case R.id.bookings:
                 getSupportFragmentManager().beginTransaction().replace(R.id.home_container, bookingsFragment).commit();
                 return true;
-            case R.id.about_us:
-                getSupportFragmentManager().beginTransaction().replace(R.id.home_container, aboutUsFragment).commit();
+            case R.id.logout:
+                FirebaseAuth.getInstance().signOut();
+                finish();
                 return true;
             default:
                 getSupportFragmentManager().beginTransaction().replace(R.id.home_container, homeFragment).commit();

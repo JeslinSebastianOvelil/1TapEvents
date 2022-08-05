@@ -50,23 +50,26 @@ public class AllServicesAdapter extends RecyclerView.Adapter<AllServicesAdapter.
     private Context context;
     private List<OrganizerModel> organizerModels;
 
-    public AllServicesAdapter(String category, Context context, List<OrganizerModel> organizerModels) {
+    OnItemClickListener mitemClickListener;
+
+    public AllServicesAdapter(String category, Context context, List<OrganizerModel> organizerModels,OnItemClickListener itemClickListener) {
         this.category = category;
         this.context = context;
         this.organizerModels = organizerModels;
+        this.mitemClickListener = itemClickListener;
     }
 
     @NonNull
     @Override
     public AllServicesAdapter.ItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         return new AllServicesAdapter.ItemViewHolder(LayoutInflater.from(context)
-                .inflate(R.layout.service_layout,parent,false));
+                .inflate(R.layout.service_layout,parent,false),mitemClickListener);
     }
 
     @Override
     public void onBindViewHolder(@NonNull AllServicesAdapter.ItemViewHolder holder, int position) {
 
-        if(category.equals(organizerModels.get(position).getCategory())){
+
             holder.name.setText(new StringBuilder().append(organizerModels.get(position).getName()));
             holder.price.setText(new StringBuilder("Rs").append(String.valueOf(organizerModels.get(position).getPrice())));
 
@@ -77,7 +80,7 @@ public class AllServicesAdapter extends RecyclerView.Adapter<AllServicesAdapter.
 
             storageReference = storage.getReference().child(photourl);
             try {
-                File localfile = File.createTempFile("images","jpg");
+                File localfile = File.createTempFile("images","jpeg");
                 storageReference.getFile(localfile)
                         .addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
                             @Override
@@ -95,17 +98,14 @@ public class AllServicesAdapter extends RecyclerView.Adapter<AllServicesAdapter.
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
-        }
     }
-
 
     @Override
     public int getItemCount() {
         return organizerModels.size();
     }
 
-    public class ItemViewHolder extends RecyclerView.ViewHolder{
+    public class ItemViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         @BindView(R.id.allservices_pic)
         ImageView photo;
@@ -116,11 +116,23 @@ public class AllServicesAdapter extends RecyclerView.Adapter<AllServicesAdapter.
         @BindView(R.id.allservices_price)
         TextView price;
 
+        OnItemClickListener itemClickListener;
+
         private Unbinder unbinder;
 
-        public ItemViewHolder(@NonNull View itemView) {
+        public ItemViewHolder(@NonNull View itemView,OnItemClickListener itemClickListener) {
             super(itemView);
             unbinder= ButterKnife.bind(this,itemView);
+            itemView.setOnClickListener(this);
+            this.itemClickListener = itemClickListener;
         }
+
+        @Override
+        public void onClick(View v) {
+            itemClickListener.onItemClick(getAdapterPosition());
+        }
+    }
+    public interface OnItemClickListener{
+        void onItemClick(int position);
     }
 }

@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.example.a1tapevents.AllServices;
 import com.example.a1tapevents.R;
 import com.example.a1tapevents.Service;
 
@@ -49,6 +50,7 @@ public class HomeFragment extends Fragment {
         transport = (ImageView) view.findViewById(R.id.transport_homepage);
         cultureprog = (ImageView) view.findViewById(R.id.culture_homepage);
         decoration = (ImageView) view.findViewById(R.id.decorations_homepage);
+        soundlight = (ImageView)  view.findViewById(R.id.soundlight_homepage);
 
         venues.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,6 +80,13 @@ public class HomeFragment extends Fragment {
                 gotoActivity();
             }
         });
+        soundlight.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                textToSend ="Light & Sound";
+                gotoActivity();
+            }
+        });
         cultureprog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -98,7 +107,7 @@ public class HomeFragment extends Fragment {
     }
 
     private void gotoActivity() {
-        Intent intent = new Intent(getActivity(), Service.class);
+        Intent intent = new Intent(getActivity(), AllServices.class);
         intent.putExtra(TEXT_TO_SEND,textToSend);
         startActivity(intent);
     }
