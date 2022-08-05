@@ -63,7 +63,7 @@ public class OrganizerLogin extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
                                 Toast.makeText(OrganizerLogin.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(OrganizerLogin.this, profilelogin.class);
+                                Intent intent = new Intent(OrganizerLogin.this, OrganizerHome.class);
                                 startActivity(intent);
                                 finish();
                             } else {
@@ -114,7 +114,7 @@ public class OrganizerLogin extends AppCompatActivity {
             }
         });
     }
-
+/*
     protected void onStart(){
         super.onStart();
         FirebaseUser user = mAuth.getCurrentUser();
@@ -126,6 +126,8 @@ public class OrganizerLogin extends AppCompatActivity {
     }
 
 
+
+ */
 }
 
 

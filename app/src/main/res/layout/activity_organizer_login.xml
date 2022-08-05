@@ -8,7 +8,33 @@
     android:focusable="auto"
     tools:context=".OrganizerLogin">
 
+    <LinearLayout
+        android:id="@+id/ologin_actionbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/purple_500"
+        android:orientation="horizontal"
+        android:padding="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="11"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:text="Login"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
     <ImageView
+        android:id="@+id/logo_ologin"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginTop="52dp"
@@ -17,7 +43,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.479"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ologin_actionbar"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
@@ -29,11 +55,11 @@
         android:textColor="@color/black"
         android:textSize="24sp"
         android:textStyle="bold"
+        android:layout_marginTop="30dp"
         app:layout_constraintBottom_toTopOf="@+id/email_ologin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.879" />
+        app:layout_constraintTop_toBottomOf="@id/logo_ologin" />
 
     <EditText
         android:id="@+id/email_ologin"
@@ -45,10 +71,11 @@
         android:inputType="textPersonName"
         android:textColor="#050000"
         android:textColorHint="#0B0000"
+        android:layout_marginTop="10dp"
         app:layout_constraintBottom_toTopOf="@+id/password_ologin"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title_login"/>
 
     <EditText
         android:id="@+id/password_ologin"
@@ -62,7 +89,8 @@
         app:layout_constraintBottom_toTopOf="@+id/button_ologin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/email_ologin"/>
 
     <Button
         android:id="@+id/button_ologin"
@@ -73,7 +101,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/password_ologin"/>
 
     <TextView
         android:id="@+id/forgot_ologin"

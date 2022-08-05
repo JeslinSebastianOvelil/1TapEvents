@@ -10,9 +10,9 @@
     <LinearLayout
         android:id="@+id/mybooking_panel"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/grey"
-        android:orientation="vertical"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/purple_500"
+        android:orientation="horizontal"
         android:weightSum="16">
 
         <TextView
@@ -25,14 +25,9 @@
             android:fontFamily="sans-serif"
             android:gravity="start"
             android:text="My Bookings"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="30sp"
             android:textStyle="bold" />
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="8dp"
-            android:background="@color/purple_500"/>
 
     </LinearLayout>
 
@@ -53,7 +48,7 @@
             android:fontFamily="sans-serif"
             android:gravity="start"
             android:text="@string/mybooking_message"
-            android:textColor="@color/purple_500"
+            android:textColor="@color/purple_200"
             android:textSize="15sp" />
     </LinearLayout>
 

@@ -6,36 +6,35 @@
     android:layout_height="match_parent"
     tools:context=".MyCart"
     android:id="@+id/mycart_layout">
-    
+
     <LinearLayout
-        android:id="@+id/mycart_panel"
-        android:background="@color/grey"
+        android:id="@+id/mycart_actionbar"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:orientation="horizontal"
-        android:weightSum="16">
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/purple_500"
+        android:orientation = "horizontal"
+        android:padding ="15dp">
 
         <TextView
-            android:id="@+id/mycart_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="11"
-            android:layout_marginLeft="80dp"
             android:fontFamily="sans-serif"
             android:gravity="center"
             android:text="My Cart"
-            android:textColor="@color/black"
-            android:textSize="30sp"
+            android:textColor="@color/white"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
     </LinearLayout>
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/mycart_recycler"
         android:layout_width="match_parent"
         android:layout_height="500dp"
-        android:layout_below="@+id/mycart_panel"
+        android:layout_below="@+id/mycart_actionbar"
         android:padding="8dp">
 
     </androidx.recyclerview.widget.RecyclerView>

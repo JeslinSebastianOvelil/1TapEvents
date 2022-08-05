@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AllServices"
-    android:id="@+id/allservices_layout">
+    tools:context=".OrganizerHome"
+    android:id="@+id/orghome_layout">
 
     <LinearLayout
-        android:id="@+id/allservices_actionbar"
+        android:id="@+id/org_actionbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/purple_500"
@@ -16,27 +16,29 @@
         android:padding ="15dp">
 
         <TextView
-            android:id="@+id/allservices_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:layout_marginLeft="10dp"
             android:layout_weight="11"
             android:fontFamily="sans-serif"
-            android:gravity="start"
-            android:text="Service"
+            android:gravity="center"
+            android:text="Home"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
 
+        <ImageView
+            android:id="@+id/orgprofile"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_person" />
     </LinearLayout>
 
-
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/allservices_recycler"
+        android:id="@+id/orghome_recycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/allservices_actionbar"
+        android:layout_below="@+id/org_actionbar"
         android:padding="8dp">
 
     </androidx.recyclerview.widget.RecyclerView>

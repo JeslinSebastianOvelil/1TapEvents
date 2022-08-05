@@ -188,11 +188,16 @@ public class Service extends AppCompatActivity {
     }
 
     private void addToFirestore(String date, String time, String location) {
+
+        String uid = currUser.getUid();
+
         bookingModel = new BookingModel();
         bookingModel.setDate(date);
         bookingModel.setTime(time);
         bookingModel.setLocation(location);
         bookingModel.setStatus("Pending");
+        bookingModel.setOrganizer(organizerModel.getName());
+        bookingModel.setUserid(uid);
 
         cartModel = new CartModel();
         cartModel.setOrganizer(organizerModel.getName());
@@ -200,7 +205,7 @@ public class Service extends AppCompatActivity {
         cartModel.setDate(date);
         cartModel.setTime(time);
         cartModel.setPrice(organizerModel.getPrice());
-        String uid = currUser.getUid();
+
         db.collection("users").document(uid).collection("cart").document().set(cartModel);
 
         db.collection("users").document(uid)

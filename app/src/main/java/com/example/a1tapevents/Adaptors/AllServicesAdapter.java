@@ -69,7 +69,7 @@ public class AllServicesAdapter extends RecyclerView.Adapter<AllServicesAdapter.
     @Override
     public void onBindViewHolder(@NonNull AllServicesAdapter.ItemViewHolder holder, int position) {
 
-        if(category.equals(organizerModels.get(position).getCategory())){
+
             holder.name.setText(new StringBuilder().append(organizerModels.get(position).getName()));
             holder.price.setText(new StringBuilder("Rs").append(String.valueOf(organizerModels.get(position).getPrice())));
 
@@ -80,7 +80,7 @@ public class AllServicesAdapter extends RecyclerView.Adapter<AllServicesAdapter.
 
             storageReference = storage.getReference().child(photourl);
             try {
-                File localfile = File.createTempFile("images","jpg");
+                File localfile = File.createTempFile("images","jpeg");
                 storageReference.getFile(localfile)
                         .addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
                             @Override
@@ -98,8 +98,6 @@ public class AllServicesAdapter extends RecyclerView.Adapter<AllServicesAdapter.
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
-        }
     }
 
     @Override

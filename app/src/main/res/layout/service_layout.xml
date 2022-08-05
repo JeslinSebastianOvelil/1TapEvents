@@ -6,16 +6,17 @@
     app:cardCornerRadius="16dp"
     app:cardElevation="12dp"
     android:layout_margin="8dp"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
 
         <LinearLayout
             android:orientation="vertical"
             android:gravity="start"
-            android:layout_width="340dp"
+            android:layout_width="match_parent"
             android:padding="10dp"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="@color/grey">
 
             <ImageView
                 android:id="@+id/allservices_pic"

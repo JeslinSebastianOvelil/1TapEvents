@@ -70,6 +70,8 @@ public class AllServices extends AppCompatActivity implements AllServicesAdapter
 
                         for(DocumentChange dc : value.getDocumentChanges()){
                             if(dc.getType() == DocumentChange.Type.ADDED){
+                                OrganizerModel om = dc.getDocument().toObject(OrganizerModel.class);
+                                if(om.getCategory().equals(string_title))
 
                                 organizerModelList.add(dc.getDocument().toObject(OrganizerModel.class));
                             }

@@ -8,9 +8,11 @@
 
 
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/scrollView2">
+        tools:layout_editor_absoluteX="-16dp"
+        tools:layout_editor_absoluteY="-108dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -22,8 +24,8 @@
                 android:id="@+id/videography_homepage"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                app:srcCompat="@drawable/eventpic14"
-                android:scaleType="centerCrop"/>
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/eventpic14" />
 
             <ImageView
                 android:id="@+id/cateringservice_homepage"
@@ -46,16 +48,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:layout_marginTop="16dp"
-                android:scaleType="centerCrop"
-                app:srcCompat="@drawable/eventpic16" />
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/transport" />
 
             <ImageView
                 android:id="@+id/culture_homepage"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:layout_marginTop="16dp"
-                android:scaleType="centerCrop"
-                app:srcCompat="@drawable/eventpic16" />
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/cultural_events" />
 
             <ImageView
                 android:id="@+id/soundlight_homepage"
@@ -70,8 +72,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:layout_marginTop="16dp"
-                android:scaleType="centerCrop"
-                app:srcCompat="@drawable/eventpic16" />
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/decorations" />
 
         </LinearLayout>
     </ScrollView>
