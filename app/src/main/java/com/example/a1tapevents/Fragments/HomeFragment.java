@@ -29,6 +29,8 @@ public class HomeFragment extends Fragment {
     private ImageView soundlight;
     private ImageView decoration;
 
+    public HomeFragment(){
+    }
     public HomeFragment(Context context) {
         this.context = context;
     }

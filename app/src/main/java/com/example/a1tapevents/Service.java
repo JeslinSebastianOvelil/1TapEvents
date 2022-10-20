@@ -16,6 +16,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -57,6 +58,8 @@ public class Service extends AppCompatActivity {
     private FirebaseUser currUser;
     private FirebaseStorage storage;
     private StorageReference storageReference;
+
+    public ProgressBar progressBar;
 
     String organizer;
     String documentID;
@@ -108,6 +111,7 @@ public class Service extends AppCompatActivity {
                                                             public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
                                                                 Bitmap bitmap = BitmapFactory.decodeFile(localfile.getAbsolutePath());
                                                                 photo.setImageBitmap(bitmap);
+                                                                progressBar.setVisibility(View.GONE);
                                                             }
                                                         })
                                                         .addOnFailureListener(new OnFailureListener() {
@@ -139,6 +143,7 @@ public class Service extends AppCompatActivity {
         price = findViewById(R.id.service_price);
         address = findViewById(R.id.service_address);
         addToCart = findViewById(R.id.service_addtocart);
+        progressBar = findViewById(R.id.service_pb);
         db = FirebaseFirestore.getInstance();
         currUser = FirebaseAuth.getInstance().getCurrentUser();
 

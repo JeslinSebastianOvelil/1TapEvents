@@ -13,20 +13,19 @@
         android:layout_height="?attr/actionBarSize"
         android:background="@color/purple_500"
         android:orientation="horizontal"
-        android:weightSum="16">
+        android:padding ="15dp">
 
         <TextView
             android:id="@+id/mycart_title"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="100dp"
-            android:layout_marginTop="10dp"
+            android:layout_gravity="center_vertical"
             android:layout_weight="11"
             android:fontFamily="sans-serif"
-            android:gravity="start"
+            android:gravity="center"
             android:text="My Bookings"
             android:textColor="@color/white"
-            android:textSize="30sp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
     </LinearLayout>

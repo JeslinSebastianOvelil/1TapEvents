@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -87,6 +88,7 @@ public class AllServicesAdapter extends RecyclerView.Adapter<AllServicesAdapter.
                             public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
                                 Bitmap bitmap = BitmapFactory.decodeFile(localfile.getAbsolutePath());
                                 holder.photo.setImageBitmap(bitmap);
+                                holder.progressBar.setVisibility(View.GONE);
                             }
                         })
                         .addOnFailureListener(new OnFailureListener() {
@@ -106,6 +108,9 @@ public class AllServicesAdapter extends RecyclerView.Adapter<AllServicesAdapter.
     }
 
     public class ItemViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+
+        @BindView(R.id.allservice_pb)
+        public ProgressBar progressBar;
 
         @BindView(R.id.allservices_pic)
         ImageView photo;

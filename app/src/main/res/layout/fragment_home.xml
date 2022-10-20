@@ -65,7 +65,7 @@
                 android:layout_height="200dp"
                 android:layout_marginTop="16dp"
                 android:scaleType="centerCrop"
-                app:srcCompat="@drawable/eventpic16" />
+                app:srcCompat="@drawable/lightandsound" />
 
             <ImageView
                 android:id="@+id/decorations_homepage"

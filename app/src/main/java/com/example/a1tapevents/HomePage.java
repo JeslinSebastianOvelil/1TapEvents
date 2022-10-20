@@ -24,7 +24,7 @@ public class HomePage extends AppCompatActivity implements BottomNavigationView.
 
     HomeFragment homeFragment;
     BookingsFragment bookingsFragment;
-    //AboutUsFragment aboutUsFragment;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

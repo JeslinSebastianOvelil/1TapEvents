@@ -41,6 +41,7 @@ public class BookingsFragment extends Fragment {
     private FirebaseFirestore db;
     private BookingAdapter adapter;
 
+    public BookingsFragment(){}
     public BookingsFragment(Context context) {
         this.context = context;
     }
@@ -91,13 +92,10 @@ public class BookingsFragment extends Fragment {
                             if(dc.getType() == DocumentChange.Type.ADDED){
                                 bookingModelList.add(dc.getDocument().toObject(CartModel.class));
                             }
-                            /*
                             if (dc.getType() == DocumentChange.Type.REMOVED) {
-                                finish();
-                                startActivity(getIntent());
+
                             }
 
-                             */
                             adapter.notifyDataSetChanged();
                         }
                     }
