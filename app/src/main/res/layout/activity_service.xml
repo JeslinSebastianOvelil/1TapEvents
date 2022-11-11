@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,6 +9,7 @@
     tools:context=".Service">
 
     <LinearLayout
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/purple_500"
@@ -33,17 +34,12 @@
         android:id="@+id/service_pic"
         android:layout_width="wrap_content"
         android:layout_height="200dp"
+        android:layout_below="@id/toolbar"
         android:scaleType="centerCrop"
-        android:src = "@drawable/whatsapp_logo"/>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="@color/purple_200"/>
+        android:src="@drawable/default_img" />
 
 
-
-        <TextView
+    <TextView
             android:id="@+id/service_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -52,20 +48,22 @@
             android:textSize="20sp"
             android:padding="10dp"
             android:layout_marginTop="8dp"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:layout_below="@id/service_pic"/>
 
-        <LinearLayout
+    <LinearLayout
+            android:id="@+id/llayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:padding="10dp">
+            android:padding="10dp"
+            android:layout_below="@id/service_name">
 
             <ImageView
                 android:id="@+id/service_whatsapp"
                 android:src="@drawable/whatsapp_logo"
                 android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="8dp"/>
+                android:layout_height="20dp"/>
 
             <TextView
                 android:id="@+id/service_contact"
@@ -74,7 +72,6 @@
                 android:text="Organizer Contact"
                 android:textColor="@color/black"
                 android:textSize="15sp"
-                android:layout_marginTop="8dp"
                 android:layout_marginStart="8dp" />
 
             <TextView
@@ -85,35 +82,40 @@
                 android:textColor="@color/black"
                 android:textSize="15sp"
                 android:textStyle="bold"
-                android:layout_marginTop="8dp"
-                android:layout_marginStart="80dp" />
+                android:layout_marginStart="80dp"/>
+    </LinearLayout>
 
-        </LinearLayout>
+    <TextView
+        android:id="@+id/service_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Organizer Address"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:padding="10dp"
+        android:layout_below="@id/llayout"/>
 
-        <TextView
-            android:id="@+id/service_address"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Organizer Address"
-            android:textColor="@color/black"
-            android:textSize="15sp"
-            android:padding="10dp"
-            android:layout_marginTop="8dp" />
+    <ScrollView
+        android:id="@+id/s1"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_below="@id/service_address">
 
         <TextView
             android:id="@+id/service_desc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="10dp"
             android:text="About"
             android:textColor="@color/black"
-            android:textSize="15sp"
-            android:layout_marginTop="8dp"
-            android:padding="10dp"/>
+            android:textSize="15sp" />
+    </ScrollView>
 
-        <LinearLayout
+    <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center_vertical">
+            android:gravity="center_horizontal"
+            android:layout_below="@id/s1">
 
             <Button
                 android:id="@+id/service_addtocart"
@@ -122,10 +124,14 @@
                 android:text="ADD TO CART"
                 android:textSize="15sp"
                 android:textStyle="bold"
-                android:layout_gravity="center"
-                android:layout_marginStart="130dp"/>
-        </LinearLayout>
+                android:layout_gravity="center_horizontal"/>
+    </LinearLayout>
 
+    <ProgressBar
+        android:id="@+id/service_pb"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_centerInParent="true" />
 
-
-</LinearLayout>
+</RelativeLayout>

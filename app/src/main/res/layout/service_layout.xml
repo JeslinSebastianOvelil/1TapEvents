@@ -1,52 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    app:cardCornerRadius="16dp"
-    app:cardElevation="12dp"
-    android:layout_margin="8dp"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="12dp"
+        android:layout_margin="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:gravity="start"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:padding="10dp"
-            android:layout_height="wrap_content"
-            android:background="@color/grey">
+            android:layout_height="match_parent">
 
-            <ImageView
-                android:id="@+id/allservices_pic"
-                android:src="@drawable/whatsapp_logo"
+            <LinearLayout
+                android:orientation="vertical"
+                android:gravity="start"
                 android:layout_width="match_parent"
-                android:layout_height="130dp"
-                android:layout_marginEnd="10dp"
-                android:scaleType="centerCrop"/>
+                android:padding="10dp"
+                android:layout_height="wrap_content"
+                android:background="@color/grey">
 
-            <TextView
-                android:id="@+id/allservices_name"
-                android:text="Name"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                android:layout_gravity="start"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                <ImageView
+                    android:id="@+id/allservices_pic"
+                    android:src="@drawable/default_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="130dp"
+                    android:layout_marginEnd="10dp"
+                    android:scaleType="centerCrop"/>
 
-
-            <TextView
-                android:id="@+id/allservices_price"
-                android:text="Price"
-                android:textSize="10sp"
-                android:textStyle="bold"
-                android:layout_gravity="start"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/allservices_name"
+                    android:text="Name"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:layout_gravity="start"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
 
 
-        </LinearLayout>
+                <TextView
+                    android:id="@+id/allservices_price"
+                    android:text="Price"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    android:layout_gravity="start"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
 
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/allservice_pb"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_centerInParent="true" />
+
+        </RelativeLayout>
 
 </androidx.cardview.widget.CardView>
